@@ -138,13 +138,14 @@ body {
     background: #f2785c;
     box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
     border-radius: 10px;
-    padding: 44px 22px 30px 37px;
+    padding: 44px 22px 31px 37px;
 
     @media (min-width: 767.98px) {
       position: relative;
       display: block;
       top: 0px;
       left: 0px;
+
       background-color: unset;
       box-shadow: none;
       padding: 0;
@@ -235,11 +236,20 @@ body {
       transform: translateY(6.67px);
     }
   }
+  &__nav-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  &__nav-wrapper.active2 {
+    display: block;
+  }
   //  ANIMATION
   &__burger-cnt.open {
-    transform: translate(-158px, 8px);
-    height: 30px;
-    width: 30px;
+    transform: translate(-185px, -35px);
     opacity: 0.7;
     transition: all 0.3s ease 0.1s;
   }
@@ -350,7 +360,7 @@ body {
     @media (max-width: 767.98px) {
       font-size: 40px;
     }
-    @media (max-width: 390px) {
+    @media (max-width: 767.98px) {
       display: none;
     }
   }
@@ -592,9 +602,11 @@ body {
   }
 
   &__gallery {
+    position: relative;
   }
 
   &__row {
+    position: relative;
     display: flex;
     gap: 60px;
     justify-content: center;
@@ -612,6 +624,28 @@ body {
     display: block;
     display: flex;
     flex: 1 1 auto;
+    position: relative;
+  }
+  &__arrows {
+    position: absolute;
+    display: none;
+    z-index: 5;
+    top: 50%;
+    width: calc(100% - (30px));
+    // padding: 0 30px;
+    justify-content: space-between;
+    transform: translateY(-50%);
+
+    @media (max-width: 767.98px) {
+      display: flex;
+    }
+  }
+  &__arrow-left {
+    padding-left: 11.27px;
+  }
+
+  &__arrow-right {
+    padding-right: 11.27px;
   }
 
   &__img {
@@ -655,7 +689,6 @@ body {
     color: #ffffff;
 
     @media (max-width: 767.98px) {
-      position: absolute;
       position: absolute;
       width: 60px;
       height: 26px;
@@ -847,9 +880,13 @@ body {
 
   &__item {
     &:hover {
-      background-color: rgba(255, 255, 255, 0.712);
+      background-color: rgba(242, 120, 92, 0.512);
       border-radius: 50px;
       transform: scale(1.03);
+      transition: all 0.3s ease 0s;
+      @media (max-width: 767.98px) {
+        border-radius: 30px;
+      }
     }
     transition: all 0.4s ease 0s;
     &:not(:last-child) {

@@ -177,7 +177,7 @@ body {
   -webkit-box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
           box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
   border-radius: 10px;
-  padding: 44px 22px 30px 37px;
+  padding: 44px 22px 31px 37px;
 }
 
 @media (min-width: 767.98px) {
@@ -319,11 +319,22 @@ body {
           transform: translateY(6.67px);
 }
 
+.header__nav-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header__nav-wrapper.active2 {
+  display: block;
+}
+
 .header__burger-cnt.open {
-  -webkit-transform: translate(-158px, 8px);
-          transform: translate(-158px, 8px);
-  height: 30px;
-  width: 30px;
+  -webkit-transform: translate(-185px, -35px);
+          transform: translate(-185px, -35px);
   opacity: 0.7;
   -webkit-transition: all 0.3s ease 0.1s;
   transition: all 0.3s ease 0.1s;
@@ -467,7 +478,7 @@ body {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 767.98px) {
   .preview__title {
     display: none;
   }
@@ -863,7 +874,12 @@ body {
   }
 }
 
+.destinations__gallery {
+  position: relative;
+}
+
 .destinations__row {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -896,6 +912,36 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  position: relative;
+}
+
+.destinations__arrows {
+  position: absolute;
+  display: none;
+  z-index: 5;
+  top: 50%;
+  width: calc(100% - (30px));
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media (max-width: 767.98px) {
+  .destinations__arrows {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.destinations__arrow-left {
+  padding-left: 11.27px;
+}
+
+.destinations__arrow-right {
+  padding-right: 11.27px;
 }
 
 .destinations__img {
@@ -954,7 +1000,6 @@ body {
 
 @media (max-width: 767.98px) {
   .destinations__country-name {
-    position: absolute;
     position: absolute;
     width: 60px;
     height: 26px;
@@ -1214,10 +1259,18 @@ body {
 }
 
 .stories-list__item:hover {
-  background-color: rgba(255, 255, 255, 0.712);
+  background-color: rgba(242, 120, 92, 0.512);
   border-radius: 50px;
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+@media (max-width: 767.98px) {
+  .stories-list__item:hover {
+    border-radius: 30px;
+  }
 }
 
 .stories-list__item:not(:last-child) {

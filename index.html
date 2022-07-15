@@ -6,8 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- meta-content -->
-  <meta name="description" content="THIS WEB-SITE IS ABOUT YOUR NEW CAREER STEP">
-  <meta name="keywords" content="web-programming, front-end, HTML, CSS, JS">
+  <meta name="description" content="We are the best team for your journey">
+  <meta name="keywords" content="travel, plan, camping, advice, journey">
 
 
   <!-- <link
@@ -62,13 +62,14 @@
                 <li class="header__nav-item"><a href="#steps">Plan Your Trip</a></li>
                 <li class="header__nav-item"><a href="#destinations">Destinations</a></li>
                 <li class="header__nav-item"><a href="#stories">Travel Stories</a></li>
-                <li class="header__nav-item hidden"><a href="#stories">Account</a></li>
-                <li class="header__nav-item hidden"><a href="#stories">Social Media</a></li>
+                <li class="header__nav-item hidden" id="account"><a href="#">Account</a></li>
+                <li class="header__nav-item hidden"><a href="#footer">Social Media</a></li>
               </ul>
             </nav>
             <div class="header__burger-cnt">
               <div class="header__burger-line"></div>
             </div>
+            <div class="header__nav-wrapper"></div>
           </div>
           <form class="header__form" action="#">
             <button class="header__login">Login</button>
@@ -129,8 +130,18 @@
         <div class="destinations__body">
           <h2 class="destinations__h2-title h2-title">Popular Destinations</h2>
           <div class="destinations__gallery">
+
             <div class="destinations__row">
+
               <div class="destinations__item active-dest">
+                <div class="destinations__arrows">
+                  <div class="destinations__arrow-left">
+                    <img src="assets/svg/dest-unactive-left.svg" alt="left-arrow">
+                  </div>
+                  <div class="destinations__arrow-right">
+                    <img src="assets/svg/dest-active-right.svg" alt="right-arrow">
+                  </div>
+                </div>
                 <div class="destinations__img">
                   <a href="#!">
                     <img src="assets/jpg/spain.jpg" alt="Spain">
@@ -268,7 +279,7 @@
           </div>
           <footer class="footer">
             <div class="footer__container _container">
-              <div class="footer__body">
+              <div class="footer__body" id="footer">
                 <ul class="footer__my-sotial-list">
                   <li class="footer__list-item">
                     <a href="https://github.com/Lights0n" target="_blank">
