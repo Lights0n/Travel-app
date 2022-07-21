@@ -126,6 +126,7 @@
           </div>
         </div>
       </section>
+      <!-- DESTINATIONS -->
       <section class="destinations" id="destinations">
         <div class="destinations__body">
           <h2 class="destinations__h2-title h2-title">Popular Destinations</h2>
@@ -277,6 +278,7 @@
               </div>
             </div>
           </div>
+          <!-- FOOTER -->
           <footer class="footer">
             <div class="footer__container _container">
               <div class="footer__body" id="footer">
@@ -317,7 +319,52 @@
 
       </section>
     </main>
+
   </div>
+  <!--  -->
+  <div id="popup" class="popup">
+    <div class="popup__wrapper">
+      <a href="#!" class="popup__bgc-close"></a>
+      <div class="popup__inner-body">
+        <h2 class="popup__welcome">Log in to your account</h2>
+        <div class="popup__sotials">
+          <button class="popup__facebook pop-button">
+            <img src="assets/svg/popup/popup-facebook.svg" height="24" width="24" alt="facebook-logo">
+            <span class="">Sign In with Facebook</span>
+          </button>
+          <button class="popup__google pop-button">
+            <img src="assets/svg/popup/popup-google.svg" height="24" width="24" alt="google-logo">
+            <span class="">Sign In with Google</span>
+          </button>
+        </div>
+        <div class="popup__or">
+          <span class=popup__or-line></span>
+          <p>or</p>
+          <span class=popup__or-line></span>
+        </div>
+        <div class="popup__inpits">
+          <form class="popup__email popup__form" action="#">
+            <label class="popup__lebel" for="">
+              <p>Email</p>
+              <input id="email" type="email">
+            </label>
+          </form>
+          <!--  -->
+          <form class="popup__password popup__form" action="#">
+            <label class="popup__lebel" for="">
+              <p>Password</p>
+              <input id="password" type="password">
+            </label>
+          </form>
+          <button class="popup__sign-in pop-button" id="popup__sign-in"><span>Sign In</span></button>
+          <div class="popup__pass-forgot">Forgot Your Password?</div>
+        </div>
+        <div class="popup__bot-devider"></div>
+        <div class="popup__have-account">Don’t have an account? <a href="#!"><span>Register</span></a> </div>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 
