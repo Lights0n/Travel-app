@@ -71,6 +71,7 @@ if (window.innerWidth < 768) {
 
 const body = document.querySelector('body')
 const popup = document.getElementById('popup');
+const account = document.getElementById('account');
 const loginButton = document.getElementById('login-button');
 // wrapper out of popup content
 const popWrapper = document.getElementsByClassName('popup__wrapper');
@@ -97,6 +98,9 @@ popOuter.addEventListener('click', () => {
 })
 
 loginButton.addEventListener('click', (el) => {
+  openPopup(el);
+})
+account.addEventListener('click', (el) => {
   openPopup(el);
 })
 
