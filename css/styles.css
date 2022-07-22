@@ -169,6 +169,7 @@ body {
 
 .header__nav-body {
   position: absolute;
+  z-index: 2;
   top: -500px;
   left: -550%;
   -webkit-transition: all 0.5s ease-out 0s;
@@ -1517,17 +1518,28 @@ body {
   }
 }
 
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
 .popup {
   position: fixed;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 20;
 }
 
 .popup__wrapper {
+  position: relative;
+  z-index: 1;
   min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1550,16 +1562,34 @@ body {
   }
 }
 
+.popup__bgc-close {
+  opacity: 0;
+  visibility: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.popup__bgc-close.active2 {
+  opacity: 1;
+  visibility: visible;
+}
+
 .popup__inner-body {
+  position: relative;
+  z-index: 2;
   background: linear-gradient(177.09deg, #ffffff 6.15%, #0d606f 202.69%);
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
-  width: 560px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   padding: 0px 45px;
-  max-height: 650px;
-  max-width: 560px;
+  max-height: 660px;
+  max-width: 650px;
 }
 
 @media (max-width: 767.98px) {
@@ -1585,7 +1615,7 @@ body {
 }
 
 .popup__sotials {
-  padding: 30px 0px;
+  padding: 30px 0px 29px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1593,7 +1623,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 @media (max-width: 424.98px) {
@@ -1710,7 +1740,7 @@ body {
 }
 
 .popup__email {
-  padding: 10px 0px 0px 0px;
+  padding: 9px 0px 0px 0px;
 }
 
 @media (max-width: 424.98px) {
@@ -1750,7 +1780,7 @@ body {
 
 .popup__pass-forgot {
   cursor: pointer;
-  padding: 10px 0px 26px 0px;
+  padding: 11px 0px 25px 0px;
   text-align: center;
   font-weight: 700;
   font-size: 15px;
@@ -1776,7 +1806,7 @@ body {
 }
 
 .popup__have-account {
-  padding: 20px 0px 23px 0px;
+  padding: 21px 0px 23px 0px;
   text-align: center;
   font-family: "Aleo";
   font-style: normal;

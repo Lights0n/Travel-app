@@ -132,6 +132,7 @@ body {
 
   &__nav-body {
     position: absolute;
+    z-index: 2;
     top: -500px;
     left: -550%;
     transition: all 0.5s ease-out 0s;
@@ -246,6 +247,7 @@ body {
   }
   &__nav-wrapper.active2 {
     display: block;
+    // z-index: 1;
   }
   //  ANIMATION
   &__burger-cnt.open {
@@ -1062,16 +1064,25 @@ body {
   }
 }
 
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
 .popup {
   position: fixed;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 20;
 
   &__wrapper {
+    position: relative;
+    z-index: 1;
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -1083,17 +1094,33 @@ body {
   }
 
   &__bgc-close {
+    opacity: 0;
+    visibility: hidden;
+    height: 100vh;
+    width: 100vw;
+    // display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  &__bgc-close.active2 {
+    opacity: 1;
+    visibility: visible;
+    // z-index: 1;
   }
 
   &__inner-body {
+    position: relative;
+    z-index: 2;
     background: linear-gradient(177.09deg, #ffffff 6.15%, #0d606f 202.69%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
-    width: 560px;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
     padding: 0px 45px;
-    max-height: 650px;
-    max-width: 560px;
+    max-height: 660px;
+    max-width: 650px;
 
     @media (max-width: 767.98px) {
       width: 100%;
@@ -1117,10 +1144,10 @@ body {
   }
 
   &__sotials {
-    padding: 30px 0px;
+    padding: 30px 0px 29px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 
     @media (max-width: 424.98px) {
       padding: 10px 0px 5px;
@@ -1220,7 +1247,7 @@ body {
     }
   }
   &__email {
-    padding: 10px 0px 0px 0px;
+    padding: 9px 0px 0px 0px;
     @media (max-width: 424.98px) {
       padding: 0px;
     }
@@ -1251,7 +1278,7 @@ body {
 
   &__pass-forgot {
     cursor: pointer;
-    padding: 10px 0px 26px 0px;
+    padding: 11px 0px 25px 0px;
     text-align: center;
     font-weight: 700;
     font-size: 15px;
@@ -1277,7 +1304,7 @@ body {
   }
 
   &__have-account {
-    padding: 20px 0px 23px 0px;
+    padding: 21px 0px 23px 0px;
     text-align: center;
     font-family: "Aleo";
     font-style: normal;

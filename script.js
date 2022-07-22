@@ -16,11 +16,14 @@ const dotOne = document.querySelector('.destinations__dot');
 
 // 
 function toggle(el) {
-  el.style.top = (el.style.top == '-43px') ? '-450px' : '-43px'
-}
-function toggleZero(el) {
-  el.style.top = (el.style.top == '0px') ? '0px' : '0px'
-}
+  if (window.innerWidth < 768) {
+
+    el.style.top = (el.style.top == '-43px') ? '-450px' : '-43px'
+  }
+  function toggleZero(el) {
+    el.style.top = (el.style.top == '0px') ? '0px' : '0px'
+  }
+};
 
 let menuOpen = false;
 burgerCnt.addEventListener('click', () => {
@@ -61,4 +64,39 @@ if (window.innerWidth < 768) {
   }
   dotOne.classList.add('active-dot');
 };
+
+
+
+// popup
+
+const body = document.querySelector('body')
+const popup = document.getElementById('popup');
+const loginButton = document.getElementById('login-button');
+// wrapper out of popup content
+const popWrapper = document.getElementsByClassName('popup__wrapper');
+const popOuter = document.querySelector('.popup__bgc-close');
+
+function openPopup(q) {
+  popup.classList.add('open');
+  body.style.overflow = 'hidden';
+  popOuter.classList.add('active2');
+
+  // dont let the <a> lead us anywhere
+  q.preventDefault();
+}
+
+function closePopup() {
+  popup.classList.remove('open');
+  body.style.overflow = 'auto';
+  popOuter.classList.remove('active2');
+
+}
+
+popOuter.addEventListener('click', () => {
+  closePopup()
+})
+
+loginButton.addEventListener('click', (el) => {
+  openPopup(el);
+})
 
