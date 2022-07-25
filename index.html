@@ -346,21 +346,27 @@
           <form class="popup__email popup__form" action="#">
             <label class="popup__lebel" for="">
               <p>E-mail</p>
-              <input id="email" type="email">
+              <input id="input-email" type="email">
             </label>
           </form>
           <!--  -->
           <form class="popup__password popup__form" action="#">
             <label class="popup__lebel" for="">
               <p>Password</p>
-              <input id="password" type="password">
+              <input id="input-password" type="password">
             </label>
           </form>
-          <button class="popup__sign-in pop-button" id="popup__sign-in"><span>Sign In</span></button>
+          <button class="popup__sign-in pop-button" id="popup__sign-in"><span id="popup-signIn">Sign In</span></button>
           <div class="popup__pass-forgot"><span>Forgot Your Password?</span></div>
         </div>
         <div class="popup__bot-devider"></div>
-        <div class="popup__have-account">Don’t have an account? <a href="#!"><span>Register</span></a> </div>
+        <div class="popup__have-account">
+          <p id="no-acc">Don’t have an account?</p>
+          &nbsp;
+          <a href="#!">
+            <span id="popup-register">Register</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>

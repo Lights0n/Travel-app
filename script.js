@@ -65,17 +65,18 @@ if (window.innerWidth < 768) {
   dotOne.classList.add('active-dot');
 };
 
-
-
 // popup
-
 const body = document.querySelector('body')
 const popup = document.getElementById('popup');
-const account = document.getElementById('account');
 const loginButton = document.getElementById('login-button');
 // wrapper out of popup content
 const popWrapper = document.getElementsByClassName('popup__wrapper');
 const popOuter = document.querySelector('.popup__bgc-close');
+const account = document.getElementById('account');
+
+const signInButton = document.getElementById('popup__sign-in');
+const registerButton = document.getElementById('popup-register');
+
 
 function openPopup(q) {
   popup.classList.add('open');
@@ -100,7 +101,46 @@ popOuter.addEventListener('click', () => {
 loginButton.addEventListener('click', (el) => {
   openPopup(el);
 })
+
 account.addEventListener('click', (el) => {
   openPopup(el);
+})
+
+// todo make some blocks vanish
+registerButton.addEventListener('click', (el) => {
+
+  registerButton.innerHTML == 'Register'
+    ? registerButton.innerHTML = 'Log in'
+    : registerButton.innerHTML = 'Register';
+
+  const welcomeText = document.querySelector('.popup__welcome');
+  welcomeText.innerHTML == "Log in to your account"
+    ? welcomeText.innerHTML = 'Create account'
+    : welcomeText.innerHTML = 'Log in to your account';
+
+  const haveAcc = document.querySelector('#no-acc');
+  haveAcc.innerHTML == 'Don’t have an account?'
+    ? haveAcc.innerHTML = 'Already have an account?'
+    : haveAcc.innerHTML = 'Don’t have an account?';
+
+  const popupSignIn = document.querySelector('#popup-signIn');
+  popupSignIn.innerHTML == 'Sign In'
+    ? popupSignIn.innerHTML = 'Sign Up?'
+    : popupSignIn.innerHTML = 'Sign In';
+
+  const sotials = document.querySelector('.popup__sotials');
+  sotials.classList.toggle('register');
+
+  const sotialsOr = document.querySelector('.popup__or');
+  sotialsOr.classList.toggle('register');
+
+  const forgotPass = document.querySelector('.popup__pass-forgot');
+  forgotPass.classList.toggle('register');
+})
+
+signInButton.addEventListener('click', (el) => {
+  let emailInputVal = document.getElementById('input-email').value;
+  let passwordInputVal = document.getElementById('input-password').value;
+  alert(`E-mail: \n${emailInputVal}\n\nPassword: \n${passwordInputVal}`);
 })
 

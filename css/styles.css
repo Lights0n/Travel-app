@@ -1524,6 +1524,7 @@ body {
 }
 
 .popup {
+  overflow-y: auto;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -1631,6 +1632,14 @@ body {
     padding: 10px 0px 5px;
     gap: 8px;
   }
+}
+
+.popup__sotials.register, .popup__or.register, .popup__pass-forgot.register {
+  display: none;
+}
+
+.popup__or.register {
+  display: none;
 }
 
 .popup__facebook {
@@ -1780,7 +1789,7 @@ body {
 
 .popup__pass-forgot {
   cursor: pointer;
-  padding: 11px 0px 25px 0px;
+  padding: 11px 0px 0px 0px;
   text-align: center;
   font-weight: 700;
   font-size: 15px;
@@ -1799,6 +1808,7 @@ body {
 }
 
 .popup__bot-devider {
+  margin-top: 25px;
   content: "";
   height: 1px;
   width: 100%;
@@ -1806,6 +1816,15 @@ body {
 }
 
 .popup__have-account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 21px 0px 23px 0px;
   text-align: center;
   font-family: "Aleo";
