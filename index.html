@@ -131,18 +131,19 @@
         <div class="destinations__body">
           <h2 class="destinations__h2-title h2-title">Popular Destinations</h2>
           <div class="destinations__gallery">
-
+            <div class="destinations__arrows">
+              <div class="destinations__arrow-left">
+                <img src="assets/svg/dest-active-right.svg" alt="left-arrow">
+              </div>
+              <div class="destinations__arrow-right">
+                <img src="assets/svg/dest-active-right.svg" alt="right-arrow">
+              </div>
+            </div>
             <div class="destinations__row">
 
+              <!-- Item 1 -->
               <div class="destinations__item active-dest">
-                <div class="destinations__arrows">
-                  <div class="destinations__arrow-left">
-                    <img src="assets/svg/dest-unactive-left.svg" alt="left-arrow">
-                  </div>
-                  <div class="destinations__arrow-right">
-                    <img src="assets/svg/dest-active-right.svg" alt="right-arrow">
-                  </div>
-                </div>
+
                 <div class="destinations__img">
                   <a href="#!">
                     <img src="assets/jpg/spain.jpg" alt="Spain">
@@ -150,7 +151,7 @@
                 </div>
                 <div class="destinations__country-name">Spain</div>
               </div>
-              <!--  -->
+              <!-- Item 2 -->
               <div class="destinations__item">
                 <div class="destinations__img">
                   <a href="#!">
@@ -159,7 +160,7 @@
                 </div>
                 <div class="destinations__country-name">Japan</div>
               </div>
-              <!--  -->
+              <!-- Item 3 -->
               <div class="destinations__item">
                 <div class="destinations__img">
                   <a href="#!">
@@ -168,7 +169,9 @@
                 </div>
                 <div class="destinations__country-name">USA</div>
               </div>
+              <!-- Item 4 -->
             </div>
+            <!-- end of row -->
             <div class="destinations__dots">
               <span class="destinations__dot"></span>
               <span class="destinations__dot active-dot"></span>
@@ -346,21 +349,27 @@
           <form class="popup__email popup__form" action="#">
             <label class="popup__lebel" for="">
               <p>E-mail</p>
-              <input id="email" type="email">
+              <input id="input-email" type="email">
             </label>
           </form>
           <!--  -->
           <form class="popup__password popup__form" action="#">
             <label class="popup__lebel" for="">
               <p>Password</p>
-              <input id="password" type="password">
+              <input id="input-password" type="password">
             </label>
           </form>
-          <button class="popup__sign-in pop-button" id="popup__sign-in"><span>Sign In</span></button>
+          <button class="popup__sign-in pop-button" id="popup__sign-in"><span id="popup-signIn">Sign In</span></button>
           <div class="popup__pass-forgot"><span>Forgot Your Password?</span></div>
         </div>
         <div class="popup__bot-devider"></div>
-        <div class="popup__have-account">Don’t have an account? <a href="#!"><span>Register</span></a> </div>
+        <div class="popup__have-account">
+          <p id="no-acc">Don’t have an account?</p>
+          &nbsp;
+          <a href="#!">
+            <span id="popup-register">Register</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
