@@ -17,7 +17,6 @@ const dotOne = document.querySelector('.destinations__dot');
 // 
 function toggle(el) {
   if (window.innerWidth < 768) {
-
     el.style.top = (el.style.top == '-43px') ? '-450px' : '-43px'
   }
   function toggleZero(el) {
@@ -71,11 +70,15 @@ if (window.innerWidth < 768) {
 
 const body = document.querySelector('body')
 const popup = document.getElementById('popup');
-const account = document.getElementById('account');
 const loginButton = document.getElementById('login-button');
 // wrapper out of popup content
 const popWrapper = document.getElementsByClassName('popup__wrapper');
 const popOuter = document.querySelector('.popup__bgc-close');
+const account = document.getElementById('account');
+
+const signInButton = document.getElementById('popup__sign-in');
+const registerButton = document.getElementById('popup-register');
+
 
 function openPopup(q) {
   popup.classList.add('open');
@@ -100,7 +103,108 @@ popOuter.addEventListener('click', () => {
 loginButton.addEventListener('click', (el) => {
   openPopup(el);
 })
+
 account.addEventListener('click', (el) => {
   openPopup(el);
 })
 
+// make some blocks vanish
+registerButton.addEventListener('click', (el) => {
+
+  registerButton.innerHTML == 'Register'
+    ? registerButton.innerHTML = 'Log in'
+    : registerButton.innerHTML = 'Register';
+
+
+  const welcomeText = document.querySelector('.popup__welcome');
+  welcomeText.innerHTML == "Log in to your account"
+    ? welcomeText.innerHTML = 'Create account'
+    : welcomeText.innerHTML = 'Log in to your account';
+
+  const haveAcc = document.querySelector('#no-acc');
+  haveAcc.innerHTML == 'Don’t have an account?'
+    ? haveAcc.innerHTML = 'Already have an account?'
+    : haveAcc.innerHTML = 'Don’t have an account?';
+
+  const popupSignIn = document.querySelector('#popup-signIn');
+  popupSignIn.innerHTML == 'Sign In'
+    ? popupSignIn.innerHTML = 'Sign Up?'
+    : popupSignIn.innerHTML = 'Sign In';
+
+  const sotials = document.querySelector('.popup__sotials');
+  sotials.classList.toggle('register');
+
+  const sotialsOr = document.querySelector('.popup__or');
+  sotialsOr.classList.toggle('register');
+
+  const forgotPass = document.querySelector('.popup__pass-forgot');
+  forgotPass.classList.toggle('register');
+})
+
+signInButton.addEventListener('click', (el) => {
+  let emailInputVal = document.getElementById('input-email').value;
+  let passwordInputVal = document.getElementById('input-password').value;
+  alert(`E-mail: \n${emailInputVal}\n\nPassword: \n${passwordInputVal}`);
+})
+
+
+// slider
+
+const slierRow = document.querySelector('.destinations__row');
+const sliderItem = document.querySelectorAll('.destinations__item');
+const sliderDots = document.querySelectorAll('.destinations__dot');
+
+const rowStyles = getComputedStyle(slierRow);
+const singleRowStyleGap = rowStyles.gap;
+
+let currentSlide = 1
+let currOffset = 0;
+
+// sliders gap = 60px
+let SliderWidth = sliderItem[0].offsetWidth + 60;
+// при стрикай, закоменть, поменяй экран и стрикалка собъется, т.к. размер смещения только один раз определяется.
+window.addEventListener('resize', function () {
+  SliderWidth = sliderItem[0].offsetWidth + 60;
+});
+
+
+function movement(item, index) {
+  sliderItem.forEach((el) => { el.classList.remove('active-dest') })
+  sliderDots.forEach((el) => { el.classList.remove('active-dot') })
+  currentSlide = index;
+  // change shidt amount
+  currOffset = -(SliderWidth * (index - 1));
+  slierRow.style.transform = `translateX(${currOffset}px)`;
+
+  sliderDots[index].classList.add('active-dot');
+  sliderItem[index].classList.add('active-dest');
+}
+
+// 768px+ device width slider
+sliderItem.forEach((slider, index) => {
+  slider.addEventListener('click', () => {
+    movement(slider, index);
+  })
+})
+
+// dots slider
+if (window.innerWidth > 767.98) {
+  sliderDots.forEach((dot, iDot) => {
+    dot.addEventListener('click', () => {
+      movement(dot, iDot);
+    })
+  })
+}
+
+
+if (window.innerWidth < 768) {
+  sliderDots.forEach((dot, iDot) => {
+    dot.addEventListener('click', () => {
+      sliderItem.forEach((el) => { el.classList.remove('active-dest') })
+      sliderDots.forEach((el) => { el.classList.remove('active-dot') })
+      currentSlide = iDot;
+      sliderDots[iDot].classList.add('active-dot');
+      sliderItem[iDot].classList.add('active-dest');
+    })
+  })
+}
